@@ -51,16 +51,16 @@ public class GetColor {
         getRatio(map, myW * myH);
     }
 
-    public void getRatio(Map<RGB, Integer> map, int total) {
+    public static void getRatio(Map<RGB, Integer> map,int total){
         Iterator iterator = map.entrySet().iterator();
         String str = "";
         int max = 0;
-        while (iterator.hasNext()) {
+        while(iterator.hasNext()){
             Entry entry = (Entry) iterator.next();
             RGB key = (RGB) entry.getKey();
-            if ((int) entry.getValue() > max) {
+            if ((int) entry.getValue() > max){
                 max = (int) entry.getValue();
-                str = key.toString() + "  " + Integer.toString(100 * max / total) + "%";
+                str = key.toString() + "  " + Integer.toString(100*max/total) + "%";
             }
         }
         System.out.println(str);
